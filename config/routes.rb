@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :promotions
+  resources :items
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,4 +13,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :items, only: %i[index]
+
+  root "home"
+
+  resources :home, only: [ :indexx ] do
+    post "add_item/:id", to: "add_item"
+    post "create_promotion/:id", to: "create_promotion"
+  end
 end

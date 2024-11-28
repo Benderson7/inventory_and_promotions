@@ -1,0 +1,36 @@
+<h1>Inventory</h1>
+
+<div data-controller="home">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Categories</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th><th>
+        </tr>
+        <% @items.each do |item| %>
+            <tr>
+                <th data-home-target=<% item.id %>><%= item.name %></th>
+                <th><%= item.categories %></th>
+                <th><%= item.brand %></th>
+                <th><%= item.price %></th>
+                <th>
+                    <% if item.by_weight %>
+                        <input type="number" step=0.1 value=1.0 data-home-target=">
+                    <% else %>
+                        1
+                    <% end %>
+                </th>
+                <th><button data-action="click->home#add_to_cart">Add to Cart</button></th>
+            </tr>
+        <% end %>
+    </table>
+</div>
+
+<h1>Promotions</h1>
+
+<div>
+
+</div>

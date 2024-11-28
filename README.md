@@ -25,3 +25,6 @@ You have been tasked with designing an inventory and promotions engine for an ec
 -    The ability to add, remove, and view items in a cart
 -    Every time an item is added to the cart the best possible price given the valid promotions must be shown.
 
+## Assumptions made:
+- Items can only have one category
+  - It would have been really simple to allow them to have multiple, except I chose SQLite as my database...I have many regrets
